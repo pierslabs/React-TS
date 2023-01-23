@@ -1,0 +1,28 @@
+import { useState } from 'react';
+import { Timer } from './Timer';
+
+const TimerPadre = () => {
+  const [milisegundos, setMilisegundos] = useState(1000);
+
+  return (
+    <>
+      <span> Milisegundos: {milisegundos}</span>
+      <br />
+      <button
+        onClick={() => setMilisegundos(1000)}
+        className="btn btn-outline-success m-2"
+      >
+        1000
+      </button>
+      <button
+        onClick={() => setMilisegundos(2000)}
+        className="btn btn-outline-success m-2"
+      >
+        2000
+      </button>
+      <Timer milisegundos={milisegundos} />
+    </>
+  );
+};
+
+export default TimerPadre;
